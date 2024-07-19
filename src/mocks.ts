@@ -1,5 +1,7 @@
 import { TokenInfo, Tokenomics, SocialSentiment, TokenReport } from "./types";
 
+const dateTime1 = new Date().toISOString();
+const dateTime2 = new Date(Date.now() + 100000).toISOString();
 export const fetchMockTokenInfo = (tokenName: string): TokenInfo => {
   return {
     name: tokenName,
@@ -22,7 +24,7 @@ export const fetchMockSocialSentiment = (
   return {
     tweetBodies: ["Tweet 1 about " + tokenName, "Tweet 2 about " + tokenName],
     usernames: ["user1", "user2"],
-    dateTimes: [new Date().toISOString(), new Date().toISOString()],
+    dateTimes: [dateTime1, dateTime2],
   };
 };
 export const generateMockReport = (tokenName: string): TokenReport => {
